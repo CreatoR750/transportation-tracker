@@ -10,9 +10,8 @@ function* getPath() {
         const order: IOrder = yield select(getActiveOrder);
         const response: ReturnType<typeof getData> = yield call(getData, order);
         const coords = (response as any).data.routes[0].geometry.coordinates;
-        let reversed: ICoords[] = [];
-        coords.forEach((position: ICoords) => {
-            reversed.push([position[1], position[0]]);
+        let reversed: ICoords[] = coords.map((position: ICoords) => {
+            return ([position[1], position[0]]);
         });
         yield put(setPath(reversed));
     } catch (error) {
