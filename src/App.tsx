@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import { Layout, Typography } from "antd";
+import Table from "./components/Table/Table";
+import Map from "./components/Map/Map";
+
+const { Header, Sider, Content } = Layout;
+const { Title } = Typography;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Layout>
+            <Header>
+                <Title level={2}>Transportation tracker</Title>
+            </Header>
+            <Layout>
+                <Sider width={"40%"}>
+                    <Title level={4}>Таблица заявок</Title>
+                    <Table />
+                </Sider>
+                <Content>
+                    <Title level={4}>Карта</Title>
+                    <Map />
+                </Content>
+            </Layout>
+        </Layout>
+    );
 }
 
 export default App;

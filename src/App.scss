@@ -1,0 +1,27 @@
+.ant-layout {
+    .ant-layout-header {
+        background: #aaaaaa;
+        color: rgb(255, 255, 255);
+        height: fit-content;
+        padding: 0 30px;
+    }
+
+    .ant-layout-footer {
+        color: #fff;
+        background: #0f3853;
+    }
+
+    .ant-layout-sider {
+        color: rgb(0, 0, 0);
+        background: #fff;
+        padding: 0 0 0 30px;
+    }
+
+    .ant-layout-content {
+        background: #fff;
+        padding: 0 30px 0 20px;
+    }
+    > .code-box-demo > .ant-layout + .ant-layout {
+        margin-top: 48px;
+    }
+}
